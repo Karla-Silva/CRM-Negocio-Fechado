@@ -1,0 +1,27 @@
+.todas-etapas{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.etapa{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    min-height: 200px;
+    width: 350px;
+    border: 7px solid #ffed4b;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px lightgray;
+    padding: 10px;
+    margin:2px;
+    min-height: 55vh;
+}
+  
+.etapa h3{
+    text-align: center;
+}
+
+.column{
+    flex-direction: column;
+}

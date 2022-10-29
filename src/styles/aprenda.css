@@ -1,0 +1,25 @@
+#aprendamais{
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.images {
+    height: 40vh;
+    width: auto;
+}
+
+.text {
+    width: 65vw;
+    padding-right: 5vw;
+    padding-top: 5vh;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+}

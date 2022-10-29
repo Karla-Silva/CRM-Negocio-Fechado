@@ -1,0 +1,74 @@
+.page-section h2.section-heading, .page-section .section-heading.h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+  }
+  
+  .page-section h3.section-subheading, .page-section .section-subheading.h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  
+  .button-black {
+      font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 15px;
+      padding: 0.5rem;
+  }
+  
+  .text-muted {
+    color: #6c757d !important;
+    padding: 7px 10px;
+  }
+  
+  .text-primary {
+    color: rgba(255, 200, 0, 1) !important;
+  }
+  
+  #plans {
+    display: inline;
+  }
+  
+  #plans .plans-item {
+  max-width: 26rem;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  #plans .plans-item .plans-link {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  }
+  #plans .plans-item .plans-link .plans-hover {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 200, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity ease-in-out 0.25s;
+  }
+  #plans .plans-item .plans-link .plans-hover .plans-hover-content {
+  font-size: 1.25rem;
+  color: white;
+  }
+  #plans .plans-item .plans-link:hover .plans-hover {
+  opacity: 1;
+  }
+  #plans .plans-item .plans-caption {
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #fff;
+  }
+  #plans .plans-item .plans-caption .plans-caption-heading {
+  font-size: 1.5rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  margin-bottom: 0;
+  }
+  #plans .plans-item .plans-caption .plans-caption-subheading {
+  font-style: italic;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }

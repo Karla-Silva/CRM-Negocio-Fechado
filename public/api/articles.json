@@ -1,0 +1,32 @@
+{
+    "articles": [
+      {
+        "id": "0",
+        "name": "O que é CRM?",
+        "description": "Para começar: o que é CRM?  CRM é a sigla usada para Customer Relationship Management e se refere ao conjunto de práticas, estratégias de negócio e tecnologias focadas no relacionamento com o cliente. Confira abaixo tudo que você precisa saber sobre CRM.",
+        "text": "A Gestão de Relacionamento com o Cliente, como o termo é conhecido em português, vai muito além de uma plataforma ou um software: é todo o processo utilizado por startups, pequenas, médias e grandes empresas para gerenciar e analisar as interações com clientes, antecipar necessidades e desejos, otimizar a rentabilidade, aumentar as vendas e personalizar campanhas de captação de novos clientes. Para te ajudar a entender mais sobre o relacionamento com o cliente e o que ele significa para a sua empresa, preparamos um manual completo. Continue lendo e descubra tudo sobre CRM:",
+        "img": "https://img.freepik.com/vetores-premium/ilustracao-em-vetor-conceito-negocio-em-estilo-cartoon-plana-executivos-apertando-as-maos-homens-de-negocios-fazendo-um-acordo-conceito-de-investimento-de-dinheiro-simbolo-do-dolar_88813-1586.jpg"
+      },
+      {
+        "id": "1",
+        "name": "CRM: Definição e Conceitos",
+        "description": "Já sabemos que CRM é a sigla usada para Customer Relationship Management (Gestão de Relacionamento com o Cliente). Porém, a definição de CRM vai além: é uma gestão 360º de vendas, marketing, atendimento e todos os pontos de contato.",
+        "text":"Estamos na era do cliente, da transformação digital, das novas tecnologias. Nesse cenário, o relacionamento também evoluiu, levando a um novo conceito também conhecido como experiência do cliente. O conceito de CRM significa ser centrado no cliente. É estratégia, é um processo, é ferramenta e tecnologia. As plataformas de CRM estão na lista das tecnologias corporativas mais importantes e inovadoras disponíveis para empresas. Por quê? Pelo modo como utilizam as informações dos clientes para gerenciar contas, leads e oportunidades de vendas em um único local. Continue lendo e saiba mais sobre as funcionalidades de uma solução de CRM e o que fazem essas plataformas.",
+        "img": "https://media.istockphoto.com/vectors/businessman-office-worker-manager-win-money-internet-online-casino-vector-id1288487748?k=20&m=1288487748&s=612x612&w=0&h=uzk8l2Wv3uwaeGntdw95m0ZhDPvxdfvaA2dsmYHchrY="
+      },    
+      {
+        "id": "2",
+        "name": "O que faz o CRM?",
+        "description": "O CRM armazena informações de clientes atuais e potenciais – nome, endereço, número de telefone, etc –, e suas atividades e pontos de contato com a empresa, incluindo visitas a sites, ligações telefônicas, e-mails, entre outras interações.",
+        "text": "Entretanto, o software de CRM não é apenas uma lista de contatos elaborada: ele reúne e integra dados valiosos para preparar e atualizar suas equipes com informações pessoais dos clientes, histórico e preferência de compras.",
+        "img": "https://elements-cover-images-0.imgix.net/69fea923-b08d-4404-bb71-4e63bb6b8ab3?auto=compress%2Cformat&fit=max&w=433&s=a4701ab31ef0c8af27f491a89295f5ba"
+      },
+      {
+        "id": "3",
+        "name": "Por que o CRM é importante e quais os benefícios?",
+        "description": "Um CRM ajuda sua empresa a dispensar os processos obsoletos e o esforço manual para que o seu negócio possa progredir. A plataforma organiza as contas e contatos de forma acessível, em tempo real, acelerando e simplificando o processo de vendas.",
+        "text": "Em vez de ficar preso a lembretes em notas adesivas amarelas ou imerso em planilhas, você passa leads para sua equipe de vendas de forma rápida e fácil: cada membro da equipe, independentemente de onde esteja e o que esteja fazendo, está sempre trabalhando com informações atualizadas sobre os clientes e suas interações com a empresa.",
+        "img": "https://static.vecteezy.com/ti/vetor-gratis/p1/6317681-alvo-ilustracao-de-negocios-pessoas-correm-para-sua-meta-subir-motivacao-alvo-conquista-ilustracao-para-desafio-objetivo-conceito-de-marketing-de-negocios-gr%C3%A1tis-vetor.jpg"
+      }
+    ]
+  }

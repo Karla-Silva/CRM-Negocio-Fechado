@@ -1,0 +1,36 @@
+ body {
+    background-color: hsl(0, 0%, 96%);
+ }
+
+ section {
+    margin-top: 6.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 96%);
+}
+
+.btn {
+    background-color: #212529;
+    color:  hsl(0, 0%, 100%);
+    border: none;
+    width: 100%;
+    padding: 6px;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    color: rgba(255, 200, 0, 1);
+    background-color: #212529;
+}
+
+.btn::after, .btn::cue {
+    color: rgba(255, 200, 0, 1);
+    background-color: #212529;
+}
+
+span {
+    color: rgba(255, 200, 0, 1);
+}
+ 
