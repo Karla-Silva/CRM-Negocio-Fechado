@@ -55,15 +55,15 @@ const Login = () => {
 					    <form onSubmit={loginUser}>
 
 						<div className="form-outline mb-3">
-						    <input type="email" id="form3Example3" className="form-control" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="exemplo@email.com"/>
-						    <label className="form-label" htmlFor="form3Example3">Email</label>
+							<label className="form-label" htmlFor="form3Example3">Email</label>
+							<input type="email" id="form3Example3" className="form-control" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="exemplo@email.com"/>
 						</div>
 						<br></br>
 						<div className="form-outline mb-4">
-						    <input type="password" id="password-login" className="form-control" name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-						    <label className="form-label" htmlFor="form3Example4">Senha</label>
+							<label className="form-label" htmlFor="form3Example4">Senha</label>
+							<input type="password" id="password-login" className="form-control" name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
 						</div>
-						<br></br>
+						<br/>
 						<div className="row mb-4">
 						    <div className="d-flex justify-content-start">
 							<p>Não tem uma conta? <a href="/register">Clique aqui</a></p>

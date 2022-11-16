@@ -16,7 +16,6 @@ const Navigationbar = () => {
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="mr-auto text-uppercase">
                 <Nav.Link href="plans">Planos</Nav.Link>
-                <Nav.Link href="#aprenda">Aprenda</Nav.Link>
                 <Nav.Link href="register">Criar Conta</Nav.Link>
                 <Nav.Link href="login">Iniciar Sessão</Nav.Link>
             </Nav>
