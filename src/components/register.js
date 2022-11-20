@@ -2,7 +2,10 @@ import React,{ useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import logo from "../assets/favicon.png"
 import "../styles/register.css"
+import axios from "axios";
  
+
+
 const Register = () => {
     const navigate = useNavigate()
 
@@ -11,29 +14,26 @@ const Register = () => {
 	const [password, setPassword] = useState('')
 	const [plan, setPlan] = useState('')
 
+	function changePlan(e){
+		setPlan(e.target.value)
+	}
+
 	async function registerUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('http://localhost:1337/api/register', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				name,
-				email,
-				password,
-				plan
-			}),
-		})
-
-		const data = await response.json()
-
-		if (data.status === 'ok') {
-			navigate.push('/dashboard')
+		const body = {
+			name, 
+			email,
+			password,
+			plan
 		}
-
-		console.log(data)
+		console.log(body)
+		try{
+			await axios.post('http://localhost:4000/register', body)
+			navigate("/dashboard")
+		}catch(err){
+			console.log(err)
+		}		
 	}
 
 	return (
@@ -72,18 +72,20 @@ const Register = () => {
 										<input type="password" id="form3Example3" className="form-control" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
 									</div>
 									<label className="form-label" htmlFor="select-plan">Plano</label>
-									<select class="form-select" aria-label="Default select example" id="select-plan">
-  										<option value="1" onChange={(e) => setPlan(e.target.value)}>Free</option>
-  										<option value="2" onChange={(e) => setPlan(e.target.value)}>Plus</option>
-  										<option value="3" onChange={(e) => setPlan(e.target.value)}>Premium</option>
+									<form>
+									<select value={plan} onChange={changePlan} className="form-select" aria-label="Default select example" id="select-plan">
+  										<option className="option" value="Free">Free</option>
+  										<option className="option" value="Plus">Plus</option>
+  										<option className="option" value="Premium">Premium</option>
 									</select>
+									</form>
 									<br/>
 									<div className="row mb-4">
 										<div className="d-flex justify-content-start">
 											<p>Já tem uma conta? <a href="/login">Clique aqui</a></p>
 										</div>
 									</div>
-									<input type="submit" className="btn btn-primary btn-block text-uppercase mb-4" value="Cadastrar" id="signup"/>
+									<button type="submit" className="btn btn-primary btn-block text-uppercase mb-4" value="Cadastrar" id="signup">CADASTRAR</button>
 								</form>
 							</div>
 						</div>

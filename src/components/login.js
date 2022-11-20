@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import logo from "../assets/favicon.png"
 import "../styles/register.css"
+import axios from "axios";
 
 
 const Login = () => {
@@ -10,26 +11,18 @@ const Login = () => {
 	async function loginUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('http://localhost:1337/login', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				email,
-				password,
-			}),
-		})
-
-		const data = await response.json()
-
-		if (data.user) {
-			localStorage.setItem('token', data.user)
-			// alert('Login successful')
-			window.location.href = '/dashboard'
-		} else {
-			alert('Uusário ou senha incorretos')
+		const body = {
+			email,
+			password
 		}
+		const promise = await axios.post('http://localhost:4000/login', body)
+
+		if (promise) {
+			localStorage.setItem('token', promise.data)
+			window.location.href = '/dashboard'
+		} /* else {
+			alert('Uusário ou senha incorretos')
+		} */
 	}
 
 	return (
