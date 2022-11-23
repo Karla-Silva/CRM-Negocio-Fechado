@@ -29,7 +29,7 @@ const Register = () => {
 		}
 		console.log(body)
 		try{
-			await axios.post('http://localhost:4000/register', body)
+			await axios.post('https://crm-api-6ska.onrender.com/register', body)
 			navigate("/dashboard")
 		}catch(err){
 			console.log(err)
@@ -72,13 +72,13 @@ const Register = () => {
 										<input type="password" id="form3Example3" className="form-control" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
 									</div>
 									<label className="form-label" htmlFor="select-plan">Plano</label>
-									<form>
+									
 									<select value={plan} onChange={changePlan} className="form-select" aria-label="Default select example" id="select-plan">
   										<option className="option" value="Free">Free</option>
   										<option className="option" value="Plus">Plus</option>
   										<option className="option" value="Premium">Premium</option>
 									</select>
-									</form>
+									
 									<br/>
 									<div className="row mb-4">
 										<div className="d-flex justify-content-start">

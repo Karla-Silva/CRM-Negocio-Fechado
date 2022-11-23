@@ -15,14 +15,16 @@ const Login = () => {
 			email,
 			password
 		}
-		const promise = await axios.post('http://localhost:4000/login', body)
-
-		if (promise) {
+		
+		try{
+			const promise = await axios.post('https://crm-api-6ska.onrender.com/login', body)
 			localStorage.setItem('token', promise.data)
 			window.location.href = '/dashboard'
-		} /* else {
-			alert('Uusário ou senha incorretos')
-		} */
+		}catch(err){
+			console.log(err)
+			alert('Usuário ou senha incorretos')
+		}
+	
 	}
 
 	return (
