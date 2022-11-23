@@ -72,13 +72,12 @@ const Register = () => {
 										<input type="password" id="form3Example3" className="form-control" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
 									</div>
 									<label className="form-label" htmlFor="select-plan">Plano</label>
-									
 									<select value={plan} onChange={changePlan} className="form-select" aria-label="Default select example" id="select-plan">
-  										<option className="option" value="Free">Free</option>
+  										<option className="option">Selecione seu plano</option>
+										<option className="option" value="Free">Free</option>
   										<option className="option" value="Plus">Plus</option>
   										<option className="option" value="Premium">Premium</option>
 									</select>
-									
 									<br/>
 									<div className="row mb-4">
 										<div className="d-flex justify-content-start">

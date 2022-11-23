@@ -19,7 +19,7 @@ const DB = () => {
             <div className="todas-etapas">
                 <div className="etapa">
                     <h3>Clientes</h3>
-                    <button class="btn btn-dark">Adicionar cliente</button>
+                    <button className="btn btn-dark">Adicionar cliente</button>
                 </div>
                 <div className="etapa">
                     <h3>Necessidades do cliente</h3>
