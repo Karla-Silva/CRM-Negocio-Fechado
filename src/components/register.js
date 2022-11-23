@@ -29,10 +29,13 @@ const Register = () => {
 		}
 		console.log(body)
 		try{
-			await axios.post('https://crm-api-6ska.onrender.com/register', body)
+			await axios.post('https://crm-api-6ska.onrender.com/register', body, 
+			{headers: {
+				'Content-Type': 'application/json'
+			}})
 			navigate("/dashboard")
-		}catch(err){
-			console.log(err)
+		}catch(error){
+			console.error(error.response.data)
 		}		
 	}
 
