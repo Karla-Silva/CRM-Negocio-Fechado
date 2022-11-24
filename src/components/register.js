@@ -1,13 +1,11 @@
 import React,{ useState } from "react"
-import { useNavigate } from 'react-router-dom'
+//import { useNavigate } from 'react-router-dom'
 import logo from "../assets/favicon.png"
 import "../styles/register.css"
-import axios from "axios";
- 
-
+import axios from "axios"
 
 const Register = () => {
-    const navigate = useNavigate()
+    //const navigate = useNavigate()
 
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
@@ -29,13 +27,12 @@ const Register = () => {
 		}
 		console.log(body)
 		try{
-			await axios.post('https://crm-api-6ska.onrender.com/register', body, 
-			{headers: {
-				'Content-Type': 'application/json'
-			}})
-			navigate("/dashboard")
+			const promise = await axios.post('http://localhost:4000/register', body)
+			console.log(promise)
+			localStorage.setItem('token', promise.data)
+			window.location.href = '/dashboard'
 		}catch(error){
-			console.error(error.response.data)
+			console.log(error)
 		}		
 	}
 

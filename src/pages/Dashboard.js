@@ -1,14 +1,14 @@
 import React from 'react'
 //import jwt from 'jsonwebtoken'
 //import { useHistory } from 'react-router-dom'
-import Navigationbar from '../components/navigationbar'
+import NavigationbarLogout from '../components/navigationbarlogout'
 import Footer from '../components/footer'
 import DB from '../components/dashboard'
 
 const Dashboard = () => {
 	return (
 		<div>
-			<Navigationbar/>
+			<NavigationbarLogout/>
 			<DB/>
 			<Footer/>
 		</div>

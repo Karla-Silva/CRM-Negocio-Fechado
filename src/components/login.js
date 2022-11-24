@@ -15,9 +15,9 @@ const Login = () => {
 			email,
 			password
 		}
-		
+		console.log(body)
 		try{
-			const promise = await axios.post('https://crm-api-6ska.onrender.com/login', body)
+			const promise = await axios.post('http://localhost:4000/login', body)
 			localStorage.setItem('token', promise.data)
 			window.location.href = '/dashboard'
 		}catch(err){
