@@ -2,10 +2,28 @@ import React from "react"
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import "../styles/navbar.css"
+import "../styles/navbar.css";
+import axios from 'axios'
 
 const NavigationbarLogout = () => {
-  return(
+    
+    async function logout(event){
+        event.preventDefault()
+
+        const token = localStorage.getItem('token');
+        console.log(token)
+
+        try{
+            await axios.delete('http://localhost:4000/logout', {headers: {Authorization: `Bearer ${token}`}});
+            localStorage.removeItem('token')
+			window.location.href = '/'
+        }catch(err){
+            console.log(err)
+        }
+    }
+  
+  
+    return(
     <Navbar bg="dark" variant="dark" fixed="top" expand="lg" className="mainNav">
         <Container>
           <Navbar.Brand href="/" className='text-uppercase navbar-brand'>
@@ -15,7 +33,7 @@ const NavigationbarLogout = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="mr-auto text-uppercase">
-                <Nav.Link href="login">Encerrar Sessão</Nav.Link>
+                <Nav.Link href="login" onClick={logout}>Encerrar Sessão</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

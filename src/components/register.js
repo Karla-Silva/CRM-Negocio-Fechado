@@ -1,11 +1,9 @@
 import React,{ useState } from "react"
-//import { useNavigate } from 'react-router-dom'
 import logo from "../assets/favicon.png"
 import "../styles/register.css"
 import axios from "axios"
 
 const Register = () => {
-    //const navigate = useNavigate()
 
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
