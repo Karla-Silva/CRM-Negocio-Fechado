@@ -5,6 +5,8 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import PlansPage from './pages/PlansPage'
+import ChangePassword from './pages/ChangePassword'
+import DeleteUser from './pages/DeleteUser'
 
 const RoutesApp = () => {
 	let routes = useRoutes([
@@ -12,7 +14,9 @@ const RoutesApp = () => {
 		{path:"/login", element:<Login/>},
 		{path:"/register", element:<Register/>},
 		{path:"/dashboard", element:<Dashboard/>}, 
-		{path:"/plans", element:<PlansPage/>}
+		{path:"/plans", element:<PlansPage/>},
+		{path:"/changepassword", element:<ChangePassword/>},
+		{path:"/deleteuser", element:<DeleteUser/>}
 	])
 	return routes
 }

@@ -19,6 +19,7 @@ const Login = () => {
 		try{
 			const promise = await axios.post('http://localhost:4000/login', body)
 			localStorage.setItem('token', promise.data)
+			localStorage.setItem('email', email)
 			window.location.href = '/dashboard'
 		}catch(err){
 			console.log(err)

@@ -11,17 +11,16 @@ const NavigationbarLogout = () => {
         event.preventDefault()
 
         const token = localStorage.getItem('token');
-        console.log(token)
 
         try{
             await axios.delete('http://localhost:4000/logout', {headers: {Authorization: `Bearer ${token}`}});
             localStorage.removeItem('token')
-			window.location.href = '/'
+            localStorage.removeItem('email')
+			      window.location.href = '/';
         }catch(err){
             console.log(err)
         }
     }
-  
   
     return(
     <Navbar bg="dark" variant="dark" fixed="top" expand="lg" className="mainNav">
@@ -33,7 +32,9 @@ const NavigationbarLogout = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="mr-auto text-uppercase">
-                <Nav.Link href="login" onClick={logout}>Encerrar Sessão</Nav.Link>
+                <Nav.Link href="/" onClick={logout}>Encerrar Sessão</Nav.Link>
+                <Nav.Link href="changepassword">Mudar senha</Nav.Link>
+                <Nav.Link href="deleteuser">Deletar conta</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
