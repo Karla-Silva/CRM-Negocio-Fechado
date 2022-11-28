@@ -4,22 +4,22 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import axios from "axios"
 import ClientCard from "./clientcard"
+import NecessitiesCard from "./necessitiescard"
+import ProposalCard from "./proposalcard"
+import ResultCard from "./resultcard"
 
 const DB = () => {
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
-    const [clientName, setClientName] = useState('');
-    const [clientEmail, setClientEmail] = useState('');
-    const [proposal, setProposal] = useState('');
-    const [result, setResult] = useState('');
-
-    const [clientList, setClientList] = useState([]); 
-
     const email = localStorage.getItem('email')
     const token = localStorage.getItem('token')
 
+    const [clientName, setClientName] = useState('');
+    const [clientEmail, setClientEmail] = useState('');
+
+    const [clientList, setClientList] = useState([]); 
     useEffect( ()=>{
         const promise = axios.get(`http://localhost:4000/getclients/${email}`, {headers: {'Authorization': `Bearer ${token}`}})
         promise.then((response) => {
@@ -29,6 +29,36 @@ const DB = () => {
         })
    },[clientList])
 
+   const [necessitiesList, setNecessitiesList] = useState([]);
+   useEffect( ()=>{
+        const promise = axios.get(`http://localhost:4000/getnecessities/${email}`, {headers: {'Authorization': `Bearer ${token}`}})
+        promise.then((response) => {
+            setNecessitiesList(response.data)
+        }).catch((error) => {
+            console.log(error);
+        })
+   },[necessitiesList])
+
+   const [proposalList, setProposalList] = useState([]);
+   useEffect( ()=>{
+        const promise = axios.get(`http://localhost:4000/getproposal/${email}`, {headers: {'Authorization': `Bearer ${token}`}})
+        promise.then((response) => {
+            setProposalList(response.data)
+        }).catch((error) => {
+            console.log(error);
+        })
+   },[proposalList])
+
+    const [resultList, setResultList] = useState([]);
+    useEffect(()=>{
+        const promise = axios.get(`http://localhost:4000/getresult/${email}`, {headers: {'Authorization': `Bearer ${token}`}})
+        promise.then((response) => {
+            setResultList(response.data)
+        }).catch((error) => {
+            console.log(error)
+        })
+    },[resultList])
+
     async function createClient(event){
         event.preventDefault()
         const body ={
@@ -37,9 +67,7 @@ const DB = () => {
             clientEmail
         }
 
-        const headers = {
-            'Authorization': `Bearer ${token}`
-        }
+        const headers = {'Authorization': `Bearer ${token}`}
 
         try{
             await axios.post('http://localhost:4000/createclient', body, {headers: headers})
@@ -48,53 +76,6 @@ const DB = () => {
             alert('Houve um erro. Tente novamente')
         }
     }
-
-    
-
-    async function addProposal(event){
-        event.preventDefault()
-
-        const body ={
-            proposal
-        }
-
-        const headers = {
-            'Authorization': `Bearer ${token}`
-        }
-
-        try{
-
-        }catch(err){
-            console.log(err)
-            alert('Houve um erro. Tente novamente')
-        }
-
-    }
-
-    async function addResult(event){
-        event.preventDefault()
-
-        const body ={
-            result
-        }
-
-        const headers = {
-            'Authorization': `Bearer ${token}`
-        }
-
-        try{
-
-        }catch(err){
-            console.log(err)
-            alert('Houve um erro. Tente novamente')
-        }
-
-    }
-
-    async function deleteClient(event){
-        event.preventDefault()
-
-    }	
 
 	return (
         <section className="column">
@@ -138,12 +119,15 @@ const DB = () => {
                 </div>
                 <div className="etapa">
                     <h3>Necessidades do cliente</h3>
+                    {necessitiesList.map((client) => (<div key={client.clientid}>{<NecessitiesCard props={client}/>}</div>))}
                 </div>
                 <div className="etapa">
                     <h3>Proposta</h3>
+                    {proposalList.map((client) => (<div key={client.clientid}>{<ProposalCard props={client}/>}</div>))}
                 </div>
                 <div className="etapa">
                     <h3>Negócio Fechado</h3>
+                    {resultList.map((client) => (<div key={client.clientid}>{<ResultCard props={client}/>}</div>))}
                 </div>
             </div>
         </section>

@@ -4,32 +4,30 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import axios from "axios";
 
-const clientCard = ({props}) => {
-
+const proposalCard = ({props}) => {
     const token = localStorage.getItem('token');
 
-    const [necessities, setNecessities] = useState('');
+    const [result, setResult] = useState('');
     const {clientid} = props;
 
-    async function addNecessities(event){
+    async function addResult(event){
         event.preventDefault()
 
         const body ={
-            necessities,
+            result,
             clientid
         }
 
         const headers = {'Authorization': `Bearer ${token}`}
 
         try{
-            await axios.put('http://localhost:4000/addnecessities', body, {headers: headers})
+            await axios.put('http://localhost:4000/addresult', body, {headers: headers})
         }catch(err){
             console.log(err)
             alert('Houve um erro. Tente novamente')
         }
-
     }
-    
+
     const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -44,16 +42,18 @@ const clientCard = ({props}) => {
         		<Modal.Body>
                     <p>Nome: {props.clientName}</p>
                     <p>E-mail: {props.clientEmail}</p>
-                    <form id="addNecessities" onSubmit={addNecessities}>
-                        <label className="form-label" htmlFor="necessities">Necessidades do cliente</label>
-						<input type="text" id="necessities" className="form-control" name="necessities" value={necessities} onChange={(e) => setNecessities(e.target.value)} required/>
+                    <p>Necessidades do cliente: {props.necessities}</p>
+                    <p>Proposta: {props.proposal}</p>
+                    <form id="addResult" onSubmit={addResult}>
+                        <label className="form-label" htmlFor="result">Resultado: </label>
+						<input type="text" id="result" className="form-control" name="result" value={result} onChange={(e) => setResult(e.target.value)} required/>
                     </form>
                 </Modal.Body>
         		<Modal.Footer>
           			<Button className="btn btn-primary text-uppercase" onClick={handleClose}>
             			Cancelar
           			</Button>
-          			<Button form="addNecessities" type="submit" className="btn btn-primary text-uppercase" onClick={handleClose}>
+          			<Button form="addResult" type="submit" className="btn btn-primary text-uppercase" onClick={handleClose}>
             			Salvar
           			</Button>
         		</Modal.Footer>
@@ -62,4 +62,4 @@ const clientCard = ({props}) => {
     )
 }
 
-export default clientCard;
+export default proposalCard;
