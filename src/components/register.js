@@ -25,7 +25,7 @@ const Register = () => {
 		}
 		console.log(body)
 		try{
-			const promise = await axios.post('https://crm-api-6ska.onrender.com/register', body)
+			const promise = await axios.post('http://localhost:4000/register', body)
 			localStorage.setItem('token', promise.data)
 			localStorage.setItem('email', email)
 			window.location.href = '/dashboard'
