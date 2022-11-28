@@ -23,7 +23,7 @@ const Register = () => {
 			password,
 			plan
 		}
-		console.log(body)
+
 		try{
 			const promise = await axios.post('http://localhost:4000/register', body)
 			localStorage.setItem('token', promise.data)
