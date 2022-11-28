@@ -26,8 +26,8 @@ const Register = () => {
 		console.log(body)
 		try{
 			const promise = await axios.post('http://localhost:4000/register', body)
-			console.log(promise)
 			localStorage.setItem('token', promise.data)
+			localStorage.setItem('email', email)
 			window.location.href = '/dashboard'
 		}catch(error){
 			alert('Usuário não pode ser registrado. Confira os dados de cadastro e tente novamente.')
