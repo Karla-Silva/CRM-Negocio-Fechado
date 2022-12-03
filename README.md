@@ -1,5 +1,5 @@
 # CRM - Negócio Fechado
-Este projeto foi desenvolvido durante o bootcamp de Web Fullstack Development da Tera.
+Este projeto foi desenvolvido durante o bootcamp de Web Fullstack Development da Tera. <br/>
 O propósito deste projeto é criar um CRM responsivo e funcional. 
 Sinta-se a vontade para criar seu cadastro e explorar as funcionalidades deste projeto.
 
